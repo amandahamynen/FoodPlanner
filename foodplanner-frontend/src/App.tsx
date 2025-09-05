@@ -22,16 +22,19 @@ function App() {
     setFoodItems(json);
   }
 
-  const foodItemCreation = (event: React.SyntheticEvent) => {
-    event.preventDefault()
-    const foodItemToAdd = {
-      id: foodItems.length + 1,
-      name: newFoodItem,
-    }
-    console.log(foodItemToAdd);
-    setFoodItems(foodItems.concat(foodItemToAdd));
-    setNewFoodItem('')
-  };
+  const foodItemCreation = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    const response = await fetch(`${API_URL}/food-items`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: newFoodItem })
+    });
+    const json = await response.json();
+    setFoodItems([...foodItems, json]);
+    setNewFoodItem('');
+  }
 
   return (
     <div className="App">
