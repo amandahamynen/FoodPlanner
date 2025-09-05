@@ -1,7 +1,6 @@
 package com.example.foodplanner_backend;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class FoodItem {
