@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 interface FoodItem {
   id: number,
@@ -7,8 +9,18 @@ interface FoodItem {
 }
 
 function App() {
-  const [foodItems, setFoodItems] = useState<FoodItem[]>([{id: 1, name: 'Apple'}, {id: 2, name: 'Banana'}]);
+  const [foodItems, setFoodItems] = useState<FoodItem[]>([]);
   const [newFoodItem, setNewFoodItem] = useState<string>('');
+
+  useEffect(() => {
+    fetchFoodItems();
+  }, []);
+
+  const fetchFoodItems = async () => {
+    const response = await fetch(`${API_URL}/food-items`);
+    const json = await response.json();
+    setFoodItems(json);
+  }
 
   const foodItemCreation = (event: React.SyntheticEvent) => {
     event.preventDefault()
