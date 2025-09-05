@@ -1,4 +1,4 @@
-package com.example.foodplanner.model;
+package com.example.foodplanner_backend;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

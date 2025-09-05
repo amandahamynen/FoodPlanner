@@ -1,6 +1,5 @@
-package com.example.foodplanner.repository;
+package com.example.foodplanner_backend;
 
-import com.example.foodplanner.model.Inventory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

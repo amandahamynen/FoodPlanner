@@ -1,4 +1,4 @@
-package com.example.foodplanner.model;
+package com.example.foodplanner_backend;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

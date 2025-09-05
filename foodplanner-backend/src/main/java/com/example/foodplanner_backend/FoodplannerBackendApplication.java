@@ -1,4 +1,4 @@
-package com.example.foodplanner;
+package com.example.foodplanner_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

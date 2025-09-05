@@ -1,7 +1,5 @@
-package com.example.foodplanner.controller;
+package com.example.foodplanner_backend;
 
-import com.example.foodplanner.model.Inventory;
-import com.example.foodplanner.repository.InventoryRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
